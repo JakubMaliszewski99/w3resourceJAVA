@@ -1,43 +1,28 @@
-import java.lang.reflect.Array;
 import java.util.Scanner;
-
 public class Main{
     public static void main(String[] args) {
-        /*24. Write a Java program to convert a binary number to an octal number.
+        /*25. Write a Java program to convert a octal number to a decimal number.
         Input Data:
-        Input a Binary Number: 111
+        Input any octal number: 10
         Expected Output
 
-        Octal number: 7  */
-        // Variables
-        Scanner scanner = new Scanner(System.in);
+        Equivalent decimal number: 8 */
 
-        long binNum = 0;
+        Scanner in = new Scanner(System.in);
+        int octal = 0;
         int dec = 0;
-        byte[] oct = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+        byte i = 0;
 
-        int octLength = 0;
+        System.out.print("Input an octal number: ");
+        octal = in.nextInt();
 
-        // Take input
-        System.out.print("Input Binary Number: ");
-        binNum = scanner.nextLong();
-
-        // Convert bin to dec
-        dec = Conversions.convBin2Dec(binNum);
-
-        // Convert decimal to oct (you get the digits in a reversed order)
-        oct = Conversions.convDec2Oct(dec);
-
-        for (int j = 0; oct[j] >= 0; j++){
-            octLength++;
+        while (octal>0){
+            dec += (octal%10) * Math.pow(8, i);
+            octal /= 8;
+            i++;
         }
 
-        System.out.print("Octal Number: ");
-        for (int i = octLength-1; i >= 0; i--){
-        System.out.print(oct[i]);
-        }
-        scanner.close();
-
-
+        System.out.println("Equivalent decimal number: " + dec);
+        in.close();
     }
 }
