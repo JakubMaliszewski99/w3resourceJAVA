@@ -31,6 +31,7 @@ public class Main{
 
         // Calculate and display the distance between the two coordinates
         System.out.print("The distance between those points is: " + distance_Between_LatLong(lat1, lon1, lat2, lon2) + " km\n");
+        input.close();
     }
 
     // Points will be converted to radians before calculation

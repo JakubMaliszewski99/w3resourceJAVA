@@ -12,5 +12,7 @@ public class Zadanie5 {
 
         int result = num1 * num2;
         System.out.println(num1 + " X " + num2 + " = " + result);
+
+        scanner.close();
     }
 }
